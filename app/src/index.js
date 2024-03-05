@@ -2,37 +2,47 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 
-class Square extends React.Component {
-    constructor(props){
-      super(props);
-      this.state = {
-        value : null,
-      };
-    }
+// class Square extends React.Component {
+//     constructor(props){
+//       super(props);
+//       this.state = {
+//         value : null,
+//       };
+//     }
 
-    render() {
-      return (
-        <button className="square"
-        onClick ={() => this.props.onClick() } >
-        {this.state.value }
+//     render() {
+//       return (
+//         <button className="square"
+//         onClick ={() => this.props.onClick() } >
+//         {this.state.value }
 
-        </button>
-      );
-    }
+//         </button>
+//       );
+//     }
+//   }
+  function Square(props) {
+    return(
+      <button className="square" onClick={props.onClick}>
+        {props.value}
+      </button>
+    );
   }
-  
   class Board extends React.Component {
     constructor(props) {
       super(props);
       this.state = {
         squares: Array(9).fill(null),
+        xIsNext : true,
       };
     }
 
     handleClick(i) {
       const squares = this.state.squares.slice();
-      squares[i] = 'X';
-      this.setState({squares: squares});
+      squares[i] = this.state.xIsNext ? 'X' : '0';
+      this.setState({
+        squares: squares,
+        xIsNext : !this.state.xIsNext,
+      });
     }
     renderSquare(i) {
       return (<Square 
@@ -43,7 +53,7 @@ class Square extends React.Component {
     }
   
     render() {
-      const status = 'Next player: X';
+      const status = 'Next player: ' + (this.state.xIsNext ? 'X' : '0');
   
       return (
         <div>
@@ -84,6 +94,7 @@ class Square extends React.Component {
     }
   }
   
+
   // ========================================
   
   const root = ReactDOM.createRoot(document.getElementById("root"));
