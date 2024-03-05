@@ -24,3 +24,14 @@
 23 timing npm:load:setTitle Completed in 1ms
 24 timing npm:load:display Completed in 1ms
 25 verbose logfile logs-max:10 dir:C:\Users\daadh\ENSF381\Lab7\app\Users\daadh\AppData\Roaming\npm-cache\_logs\2024-03-04T22_37_08_701Z-
+26 verbose logfile C:\Users\daadh\ENSF381\Lab7\app\Users\daadh\AppData\Roaming\npm-cache\_logs\2024-03-04T22_37_08_701Z-debug-0.log
+27 timing npm:load:logFile Completed in 13ms
+28 timing npm:load:timers Completed in 0ms
+29 timing npm:load:configScope Completed in 0ms
+30 timing npm:load Completed in 61ms
+31 silly logfile done cleaning log files
+32 timing command:run-script Completed in 8210525ms
+33 timing command:start Completed in 8210537ms
+34 verbose exit 3221225786
+35 timing npm Completed in 8210657ms
+36 verbose code 3221225786
